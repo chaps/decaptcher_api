@@ -1,6 +1,7 @@
 """
     DECAPTCHER API
-    	SUBMIT IMAGES TO THE DECAPTCHER API TO OBTAIN A RESPONSE FROM THE IMAGE SUBMITTED.
+    	SUBMIT IMAGES TO THE DECAPTCHER API TO OBTAIN A RESPONSE
+	FROM THE IMAGE SUBMITTED.
 
 """
 
@@ -31,12 +32,12 @@ def save_captcha(url, file_path):
 		f.write(chunk)
 
 #USE IF YOU WANT TO DOWNLOAD THE PREVIOUS DEFINED URL
-save_captcha(captcha_path)
+save_captcha(the_image_url, captcha_path)
 
 #LOGIN, SENDS THE CAPTCHA TO THE SERVICE AND CHECKS THE RESPONSE...
-decaptcherapi = decaptcher.Decaptcher(username, password)
+decaptcherapi = decaptcher.Decaptcher(the_user, the_passwd)
 decaptcherapi.get_captcha_response(captcha_path)
-response_captcha = decaptcher_account.parse_response()
+response_captcha = decaptcherapi.parse_response()
 print response_captcha
 
 
