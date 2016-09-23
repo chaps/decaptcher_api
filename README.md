@@ -13,7 +13,7 @@ API using requests package for making http requests with the
 
 
 --- example ---
-
+```python
 from decaptcher_api import decaptcher
 import requests
 
@@ -39,7 +39,7 @@ decaptcherapi = decaptcher.Decaptcher(the_user, the_passwd)
 decaptcherapi.get_captcha_response(captcha_path)
 response_captcha = decaptcherapi.parse_response()
 print response_captcha
-
+```
 
 
 
